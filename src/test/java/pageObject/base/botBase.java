@@ -1,8 +1,6 @@
 package pageObject.base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class botBase {
@@ -10,23 +8,18 @@ public class botBase {
     protected WebDriver driver;
 
     //Constructor Base
-    public botBase(WebDriver driver){
+    public botBase(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
 
-
-    }
-    public void inicializarChrome(){
-        WebDriverManager.chromedriver().setup();
-        this.driver = new ChromeDriver();
-        PageFactory.initElements(this.driver,this);
-    }
-    public void cargarPagina(String url){
-        inicializarChrome();
-        this.driver.get(url);
     }
 
     public WebDriver getDriver() {
         return driver;
+    }
+    public String getURL(){
+        String url = driver.getCurrentUrl();
+        return url;
     }
 }
 /*

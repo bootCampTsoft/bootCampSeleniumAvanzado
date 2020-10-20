@@ -31,9 +31,6 @@ public class ppmLoginPage extends botBase {
 
 
     //metodos
-    public void cargarPpmLoginPage(){
-        driver.get("https://ppm.tsoftglobal.com/itg/dashboard/app/portal/PageView.jsp");
-    }
 
     public void login(String user, String pass){
         username.sendKeys(user);

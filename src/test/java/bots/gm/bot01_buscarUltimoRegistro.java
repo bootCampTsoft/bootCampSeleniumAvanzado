@@ -1,12 +1,10 @@
-package bots.ea;
+package bots.gm;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Before;
-
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageObject.pages.ppmHomePage;
@@ -22,8 +20,8 @@ public class bot01_buscarUltimoRegistro {
     ppmHomePage homePage;
     @BeforeTest
     public void setup(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://ppm.tsoftglobal.com/itg/dashboard/app/portal/PageView.jsp");
     }
@@ -35,6 +33,7 @@ public class bot01_buscarUltimoRegistro {
     public void login(){
         loginPage = new ppmLoginPage(driver);
         loginPage.login("gabriel.marinan","GM4r1n4N");
+        Assert.assertEquals("https://ppm.tsoftglobal.com/itg/dashboard/app/portal/PageView.jsp",loginPage.getURL());
 
     }
     @Test(priority = 1)
