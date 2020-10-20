@@ -1,9 +1,7 @@
 package pageObject.pages;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import pageObject.base.botBase;
@@ -12,7 +10,6 @@ import pageObject.base.botBase;
  * URL: https://ppm.tsoftglobal.com/itg/dashboard/app/portal/PageView.jsp
  * */
 public class ppmLoginPage extends botBase {
-
 
     public ppmLoginPage(WebDriver driver) {
         super(driver);
@@ -30,6 +27,8 @@ public class ppmLoginPage extends botBase {
     @FindBy(xpath ="//div[@id='label-LOGON_SUBMIT_BUTTON_CAPTION']")
     @CacheLookup
     public WebElement btnIniciarSesion;
+
+
 
     //metodos
     public void cargarPpmLoginPage(){
