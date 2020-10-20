@@ -12,8 +12,6 @@ public class bot01_buscarUltimoRegistro {
 
     @Test
     public void login(){
-        loginPage.InicioChrome();
-        loginPage.cargarPpmLoginPage();
         loginPage.login("eduardo.araya","password");
     }
 }

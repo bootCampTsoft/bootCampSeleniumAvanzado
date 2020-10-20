@@ -13,6 +13,7 @@ import pageObject.base.botBase;
 public class ppmHomePage extends botBase{
     public ppmHomePage(WebDriver driver) {
         super(driver);
+        driver.get(driver.getCurrentUrl());
     }
 
 
