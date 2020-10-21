@@ -2,14 +2,17 @@ package pageObject.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class botBase {
 
     protected WebDriver driver;
+    protected WebDriverWait espera;
 
     //Constructor Base
     public botBase(WebDriver driver) {
         this.driver = driver;
+        this.espera = new WebDriverWait(driver, 15);
         PageFactory.initElements(driver, this);
 
     }

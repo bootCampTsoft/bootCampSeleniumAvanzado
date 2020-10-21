@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import pageObject.base.botBase;
 
 /*
@@ -13,6 +14,7 @@ public class ppmLoginPage extends botBase {
 
     public ppmLoginPage(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
     }
 
     //Definicion de Objetos ppmLogin Page

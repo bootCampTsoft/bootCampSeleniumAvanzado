@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageObject.pages.ppmHomePage;
 import pageObject.pages.ppmLoginPage;
+import pageObject.pages.ppmSearchTimeSheets;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,9 +23,10 @@ public class bot01_buscarUltimoRegistro {
     WebDriver driver;
     ppmLoginPage loginPage;
     ppmHomePage homePage;
+    ppmSearchTimeSheets searchTimeSheets;
     String user,pass;
     @BeforeClass
-    public void credentials() throws FileNotFoundException {
+    public void credentials(){ // El BeforeClass sirve para obtener el password y el user de credentials.txt
         try {
             File myObj = new File("credentials.txt");
             Scanner myReader = new Scanner(myObj);
@@ -48,16 +50,22 @@ public class bot01_buscarUltimoRegistro {
 
 
 
-    @Test(priority = 0)
+    @Test (priority = 0)
     public void login(){
         loginPage = new ppmLoginPage(driver);
         loginPage.login(user,pass);
         Assert.assertEquals("https://ppm.tsoftglobal.com/itg/dashboard/app/portal/PageView.jsp",loginPage.getURL());
 
     }
-    @Test(priority = 1)
+    @Test (priority = 1)
     public void goToSearchTimeSheets(){
         homePage = new ppmHomePage(driver);
         homePage.goToSearchTimeSheets();
+        Assert.assertEquals("https://ppm.tsoftglobal.com/itg/tm/SearchTimeSheets.do",homePage.getURL());
+    }
+    @Test (priority = 2)
+    public void validarBusqueda(){
+        searchTimeSheets = new ppmSearchTimeSheets(driver);
+        searchTimeSheets.rellenarCampos();
     }
 }
