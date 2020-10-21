@@ -1,9 +1,8 @@
-package bots.ea;
+package gabrielMarinan.pageObject.bots.ea;
 
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import pageObject.pages.ppmLoginPage;
+import gabrielMarinan.pageObject.pages.ppmLoginPage;
 
 public class bot01_buscarUltimoRegistro {
 

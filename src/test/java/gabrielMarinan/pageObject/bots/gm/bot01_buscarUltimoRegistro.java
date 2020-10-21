@@ -1,17 +1,16 @@
-package bots.gm;
+package gabrielMarinan.pageObject.bots.gm;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pageObject.pages.ppmHomePage;
-import pageObject.pages.ppmLoginPage;
-import pageObject.pages.ppmSearchTimeSheets;
+import gabrielMarinan.pageObject.pages.ppmHomePage;
+import gabrielMarinan.pageObject.pages.ppmLoginPage;
+import gabrielMarinan.pageObject.pages.ppmSearchTimeSheets;
 
 import java.io.File;
 import java.io.FileNotFoundException;

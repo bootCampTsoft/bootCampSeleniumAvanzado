@@ -1,4 +1,4 @@
-package pageObject.base;
+package gabrielMarinan.pageObject.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
