@@ -29,8 +29,10 @@ public class ppmHomePage extends botBase{
 
     public void goToSearchTimeSheets(){
         searchDropdown.click();
+        System.out.println("Click Search");
         espera.until(ExpectedConditions.elementToBeClickable(timeSheet));
         timeSheet.click();
+        System.out.println("Click TimeSheets");
     }
 
 }

@@ -36,10 +36,20 @@ public class ppmSearchTimeSheets extends botBase {
         Select periodTypeSelect1 = new Select(periodTypeSelect);
         periodTypeSelect1.selectByValue("4");
 
+
+    }
+    public void buscar(){
         searchButton.click();
     }
     public String getResourceName(){
-        return resourceNameInput.getText();
+        return resourceNameInput.getAttribute("Value");
+    }
+    public String getPeriodType(){
+        Select periodTypeSelect1 = new Select(periodTypeSelect);
+        return periodTypeSelect1.getFirstSelectedOption().getText();
+    }
+    public Boolean closedTimeSheetsYes(){
+        return searchButton.isEnabled();
     }
 
 
