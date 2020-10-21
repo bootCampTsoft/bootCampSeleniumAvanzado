@@ -35,7 +35,7 @@ public class bot01_buscarUltimoRegistro {
         ppmResultadosPartesPage resultadosPage = new ppmResultadosPartesPage(driver);
 
         //Ingreso con mis datos
-        loginPage.login("josefa.vilches","JV1lcH3e5");//usar decode
+        loginPage.login("josefa.vilches",loginPage.decodeString("SlYxbGNIM2U1"));
 
         //Ahora busco los partes de hora
         homePage.btnBuscar.click();
