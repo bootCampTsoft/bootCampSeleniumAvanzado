@@ -6,6 +6,7 @@ import josefaVilches.pageObject.pages.ppmFiltrosPartesPage;
 import josefaVilches.pageObject.pages.ppmHomePage;
 import josefaVilches.pageObject.pages.ppmLoginPage;
 import josefaVilches.pageObject.pages.ppmResultadosPartesPage;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +16,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class bot01_buscarUltimoRegistro {
-
     WebDriver driver;
 
     @Before
@@ -37,7 +37,7 @@ public class bot01_buscarUltimoRegistro {
         //Ingreso con mis datos
         loginPage.login("josefa.vilches","JV1lcH3e5");//usar decode
 
-        //Busco la opción para buscar partes de hora
+        //Ahora busco los partes de hora
         homePage.btnBuscar.click();
         homePage.dropDownParteHoras.click();
 
@@ -69,23 +69,32 @@ public class bot01_buscarUltimoRegistro {
         SimpleDateFormat formato = new SimpleDateFormat("MM");
         String mesActual = formato.format(fechaActual);
 
-        //Convierto mes actual a int
-        int mesActualNum = Integer.parseInt(mesActual);
+        try {
+            //Convierto mes actual a int
+            int mesActualNum = Integer.parseInt(mesActual);
 
-        //Comparo los meses
-        if ((mesActualNum - mesNum) == 1) {
-            //COnfirmo que el estado es CLosed
-            if (estadoUltimoParte.contains("Closed")) {
-                System.out.println("Datos del parte más reciente: " + textoFechaUltimoParte + " " + estadoUltimoParte);
-                System.out.println("Mes Actual: " + mesActualNum + ", mes del parte: " + mesNum);
-                Assert.assertTrue(true);
+            //Comparo los meses
+            if ((mesActualNum - mesNum) == 1) {
+                //COnfirmo que el estado es CLosed
+                if (estadoUltimoParte.contains("Closed")) {
+                    System.out.println("Datos del parte más reciente: " + textoFechaUltimoParte + " " + estadoUltimoParte);
+                    System.out.println("Mes Actual: " + mesActualNum + ", mes del parte: " + mesNum);
+                    Assert.assertTrue(true);
+                } else {
+                    Assert.fail("El estado no es Closed");
+                }
             } else {
-                Assert.fail("El estado no es Closed");
+                Assert.fail("No corresponde al mes anterior");
             }
-        } else {
-            Assert.fail("No corresponde al mes anterior");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
+    }
+
+    @After
+    public void tearDown(){
+        driver.close();
     }
 
 

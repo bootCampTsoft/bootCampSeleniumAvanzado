@@ -14,11 +14,11 @@ public class ppmResultadosPartesPage extends botBase {
     }
 
     //Definición de Objetos ppm Parte de Horas
-    @FindBy(xpath = "//td[contains(text(), 'Periodo de tiempo: Parte de horas n°')]")
+    @FindBy(xpath = "//td[contains(text(),'Período de tiempo: Parte de horas nº')]")
     @CacheLookup
     public WebElement headerPeriodo;
 
-    @FindBy(xpath = "//span[contains(text(), 'Periodo de tiempo: Parte de horas n°')]")
+    @FindBy(xpath = "//span[contains(text(),'Período de tiempo: Parte de horas nº')]")
     @CacheLookup
     //Despues del primer click
     public WebElement headerPeriodoClickeado;

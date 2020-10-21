@@ -4,14 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class botBase {
-    WebDriver driver;
+    public WebDriver driver;
 
     //Constructor Base
     public botBase(WebDriver driver) {
         this.driver = driver;
     }
 
-    public String getURL(){
+    //Meétodo genérico
+    public String abrirURL(String url){
+        driver.get(url);
         return driver.getCurrentUrl();
     }
 }

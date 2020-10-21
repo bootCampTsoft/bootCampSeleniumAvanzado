@@ -29,6 +29,7 @@ public class ppmLoginPage extends botBase {
 
     //Métodos genéricos
     public void login(String user, String pass) {
+        abrirURL("https://ppm.tsoftglobal.com/itg/dashboard/app/portal/PageView.jsp");
         username.sendKeys(user);
         password.sendKeys(pass);
         btnIniciarSesion.click();
