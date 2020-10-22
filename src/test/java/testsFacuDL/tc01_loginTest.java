@@ -1,3 +1,5 @@
+package testsFacuDL;
+
 import org.junit.After;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -27,15 +29,15 @@ public class tc01_loginTest {
 
     @Test
     public void sesionDenegada() throws InterruptedException {
-        loginPage.login("eduardo.araya", "1234");
+        loginPage.login("facundo.deluca", "1234");
         assertEquals("Nombre de usuario o contraseña no válido. Inicio de sesión denegado. (KNTA-10012)",loginPage.mensajeInicioSesionDenegado());
     }
 
     @Test
     public void sesionAceptada() throws InterruptedException{
-        loginPage.login("eduardo.araya", loginPage.decodeString("QHRzZjE="));
+        loginPage.login("facundo.deluca", loginPage.decodeString("QHRzZjE="));
+        Thread.sleep(3000);
+        assertEquals("Cuadro de mando: SPMO - Listado de Horas Enero 2018", loginPage.tituloViewPage());
     }
-
-
 
 }

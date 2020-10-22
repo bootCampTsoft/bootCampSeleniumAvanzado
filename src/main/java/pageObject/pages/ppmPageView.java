@@ -29,8 +29,7 @@ public class ppmPageView extends botBase {
         Thread.sleep(4000);
         click(partesDeHoras);
         Thread.sleep(4000);
+        System.out.println("Mostrando página de parte de horas");
     }
-
-
 
 }

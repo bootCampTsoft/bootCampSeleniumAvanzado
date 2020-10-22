@@ -2,8 +2,6 @@ package pageObject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
 import pageObject.base.botBase;
 
 /*
@@ -36,8 +34,10 @@ public class ppmLoginPage extends botBase {
 
     public String mensajeInicioSesionDenegado(){
         return getText(message);
-
     }
 
+    public String tituloViewPage(){
+        return getTitle();
+    }
 
 }

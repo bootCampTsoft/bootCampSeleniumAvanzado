@@ -38,6 +38,13 @@ public class botBase {
         return driver.findElement(locator).getText();
     }
 
+    public String getTitle(){
+        return driver.getTitle();
+    }
+    public String getValue(By locator){
+        return driver.findElement(locator).getAttribute("value");
+    }
+
     public void type (String inputText, By locator){
         driver.findElement(locator).sendKeys(inputText);
     }
