@@ -3,3 +3,4 @@
 *.iml
 *.class
 /debug.log
+/src/test/java/ea/test/
