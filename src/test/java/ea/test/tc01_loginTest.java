@@ -1,5 +1,6 @@
 package ea.test;
 
+import dataReader.DataReaderFactory;
 import org.junit.After;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -8,11 +9,21 @@ import org.openqa.selenium.WebDriver;
 import pageObject.pages.ppmLoginPage;
 import pageObject.pages.ppmPageView;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class tc01_loginTest {
 
     WebDriver test;
     ppmLoginPage loginPage;
     ppmPageView pageview;
+    String jsonFile ;
+    String txtFile ;
+
+    {
+        jsonFile = "json/my_json.json";
+        txtFile = "txt/my_txt.txt";
+    }
 
     @Before
     public void Setup() throws Exception{
@@ -28,8 +39,13 @@ public class tc01_loginTest {
     }
 
     @Test
-    public void sesionDenegada() throws InterruptedException {
-        loginPage.login("eduardo.araya", "1234");
+    public void sesionDenegada() throws Throwable {
+
+        List<HashMap<String, String>> data = DataReaderFactory.getReader("txt").readFile(txtFile);
+        String user = data.get(0).get("user");
+        String pass = data.get(0).get("pass");
+
+        loginPage.login(user, pass);
         assertEquals("Nombre de usuario o contraseña no válido. Inicio de sesión denegado. (KNTA-10012)",loginPage.mensajeInicioSesionDenegado());
     }
 

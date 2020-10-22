@@ -16,15 +16,15 @@ public class ppmLoginPage extends botBase {
     }
 
     //Definicion de Objetos ppmLogin Page
-    By username = By.xpath("//input[@id='field-password']");
-    By password = By.xpath("//input[@id='field-username']");
+    By password = By.xpath("//input[@id='field-password']");
+    By username = By.xpath("//input[@id='field-username']");
     By btnIniciarSesion = By.xpath("//div[@id='label-LOGON_SUBMIT_BUTTON_CAPTION']");
     By message = By.xpath("//div[@id='message']");
 
 
     //Metodos para Login Page
     public void login(String user, String pass) throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         if(isDisplayed(username)){
             type(user,username);
             type(pass,password);
