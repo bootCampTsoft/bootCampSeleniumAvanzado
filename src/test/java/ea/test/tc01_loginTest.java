@@ -51,7 +51,7 @@ public class tc01_loginTest {
 
     @Test
     public void sesionAceptada() throws InterruptedException{
-        loginPage.login("eduardo.araya", loginPage.decodeString("QHRzZjE="));
+        loginPage.login("eduardo.araya", loginPage.decodeString("QHyZjE="));
     }
 
 
