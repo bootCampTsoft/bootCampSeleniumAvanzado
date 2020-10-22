@@ -16,21 +16,21 @@ public class ppmLoginPage extends botBase {
     }
 
     //Definicion de Objetos ppmLogin Page
-    By username = By.xpath("//input[@id='field-username']");
-    By password = By.xpath("//input[@id='field-password']");
+    By username = By.xpath("//input[@id='field-password']");
+    By password = By.xpath("//input[@id='field-username']");
     By btnIniciarSesion = By.xpath("//div[@id='label-LOGON_SUBMIT_BUTTON_CAPTION']");
     By message = By.xpath("//div[@id='message']");
 
 
     //Metodos para Login Page
     public void login(String user, String pass) throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         if(isDisplayed(username)){
             type(user,username);
             type(pass,password);
             click(btnIniciarSesion);
         }else{
-            System.out.println("la url no se cargo correctamente. error tiempo de carga > 3000 ms");
+            System.out.println("la url no se cargo correctamente. error tiempo de carga > 5000 ms");
         }
     }
 

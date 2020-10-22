@@ -1,3 +1,5 @@
+package ea.test;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,7 +28,7 @@ public class tc02_busquedaTest {
     }
 
     @Test
-    public void IrBuscarParteDeHoras() throws InterruptedException {
+    public void ConsultarUltimoParteDeHoras() throws InterruptedException {
         pageview.IrBuscarParteDeHoras();
 
     }
