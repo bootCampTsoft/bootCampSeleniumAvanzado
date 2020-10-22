@@ -14,7 +14,8 @@ public class ppmPageView extends botBase {
     By buscar = By.xpath("//a[contains(text(),'Buscar')]");
     By partesDeHoras = By.xpath("//a[contains(text(),'Partes de horas')]");
     By linkCerrarSesion = By.xpath("//a[contains(text(),'Cerrar sesión')]");
-
+    By btnCrear = By.xpath("//a[contains(text(),'Crear')]");
+    By parteHoras = By.xpath("//a[contains(text(),'Parte de horas')]");
     //objetos Busqueda Partes Horas
 
 
@@ -32,4 +33,9 @@ public class ppmPageView extends botBase {
         System.out.println("Mostrando página de parte de horas");
     }
 
+    public void CrearParteHoras() throws InterruptedException {
+        click(btnCrear);
+        Thread.sleep(1111);
+        click(parteHoras);
+    }
 }
