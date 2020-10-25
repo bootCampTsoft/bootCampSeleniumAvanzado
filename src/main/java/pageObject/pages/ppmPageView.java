@@ -15,9 +15,6 @@ public class ppmPageView extends botBase {
     By partesDeHoras = By.xpath("//a[contains(text(),'Partes de horas')]");
     By linkCerrarSesion = By.xpath("//a[contains(text(),'Cerrar sesión')]");
 
-    //objetos Busqueda Partes Horas
-
-
     public ppmPageView(WebDriver driver) {
         super(driver);
     }
@@ -26,11 +23,9 @@ public class ppmPageView extends botBase {
     //Definicion de Metodos para PageView
     public void IrBuscarParteDeHoras() throws InterruptedException {
         click(buscar);
-        Thread.sleep(4000);
+//        Thread.sleep(4000);
         click(partesDeHoras);
         Thread.sleep(4000);
     }
-
-
 
 }
