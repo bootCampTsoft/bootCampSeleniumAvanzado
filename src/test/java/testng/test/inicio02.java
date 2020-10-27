@@ -1,17 +1,20 @@
 package testng.test;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class inicio01 {
+public class inicio02 {
 
     @Test(groups = "inicio", timeOut = 400)
     public void metodo() throws InterruptedException {
-        Thread.sleep(500);
+        Thread.sleep(300);
         System.out.println("Hola");
     }
-    @Test(groups = "medio", dependsOnMethods = "metodo")
-    public void metodo2(){
+    @Parameters({"parametro1"})
+    @Test(groups = "medio")
+    public void metodo2(String par1){
         System.out.println("Hola otra vez");
+        System.out.println(par1);
     }
 
     @Test(groups = "final",enabled = false)

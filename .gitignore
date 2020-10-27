@@ -3,3 +3,4 @@
 *.iml
 *.class
 /debug.log
+/target/
